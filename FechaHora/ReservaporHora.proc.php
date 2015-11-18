@@ -9,9 +9,9 @@
 			//realizamos la conexión con mysql
 			$con = mysqli_connect('localhost', 'root', '', 'club_estudio');
 
-			$sql = "INSERT INTO usuario (nom, pass, rol, img) VALUES ('$_REQUEST[fechaini]', '$_REQUEST[fechafinal]', '$_REQUEST[tiprecur]')";
-
-			 echo $sql;
+			 // $sql = "INSERT INTO usuario (nom, pass, rol, img) VALUES ('$_REQUEST[nom]', '$_REQUEST[passw]', '$_REQUEST[tip]', '$_REQUEST[imag]')";
+			$sql = "INSERT INTO reserva (dateini, datefi, id_user, id_recurso) VALUES ('$_REQUEST[fechaini]', '$_REQUEST[fechafin]', '$_REQUEST[tip]', '$_REQUEST[imag]')";
+			echo $sql;
 
 			//lanzamos la sentencia sql
 			$datos = mysqli_query($con, $sql);

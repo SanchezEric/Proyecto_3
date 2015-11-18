@@ -15,7 +15,7 @@
 			//lanzamos la sentencia sql
 			$datos = mysqli_query($con, $sql);
 
-			header("location: index.php")
+			header("location: AdministrarUser.php")
 		?>
 	</body>
 </html>

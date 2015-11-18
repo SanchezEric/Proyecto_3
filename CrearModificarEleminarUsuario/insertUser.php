@@ -24,17 +24,24 @@
 			Password:<br/>
 			<!-- <textarea name="des" cols="20" rows="5"></textarea><br/> -->
 			<input type="text" name="passw" size="20" maxlength="30"><br/>
-						Rol:<br/>
+			Rol:<br/>
 			<select name="tip">
 				<option value="0" selected>User</option>
 				<option value="1">Admin</option>	
-			</select><br/><br/>
+			</select><br/>
+
+			Estado:<br/>
+			<select name="estad">
+				<option value="0">Desactivado</option>
+				<option value="1" selected>Activado</option>	
+			</select><br/>
+
 			IMG:<br/>
-			<input type="text" name="imag" size="5" maxlength="8"><br/>
+			<input type="text" name="imag" size="5" maxlength="8"><br/><br/>
 
 			<input type="submit" value="Enviar">
 		</form>
 		<br/><br/>
-		<a href="index.php">Volver</a>
+		<a href="AdministrarUser.php">Volver</a>
 	</body>
 </html>

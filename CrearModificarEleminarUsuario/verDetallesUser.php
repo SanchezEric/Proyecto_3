@@ -23,37 +23,52 @@
 					<tr>
 						<th>Nombre</th>
 						<th>Password</th>
+						<th>IMG</th>
 						<th>Rol</th>
+						<th>Estado</th>
 					</tr>
-
 
 					<?php
-						//recorremos los resultados y los mostramos por pantalla
-						//la función substr devuelve parte de una cadena. A partir del segundo parámetro (aquí 0) devuelve tantos carácteres como el tercer parámetro (aquí 25)
-						$prod = mysqli_fetch_array($datos);
-						echo "<tr><td>$prod[nom]</td><td>$prod[pass]</td><td>$prod[rol]</td></tr>";
-					?>
 
-					<tr>
-						<td>Eliminar?</td>
-						<td>
-							<?php
-								echo "<a href='eliminarUser.proc.php?id=$prod[id_user]'>Si</a>";
-							?>
-						</td>
-						<td><a href="AdministrarUser.php">No</td>
-					</tr>
+					//recorremos los resultados y los mostramos por pantalla
+					//la función substr devuelve parte de una cadena. A partir del segundo parámetro (aquí 0) devuelve tantos carácteres como el tercer parámetro (aquí 25)
+					while ($prod = mysqli_fetch_array($datos)){
+						echo "<tr><td>$prod[nom]</td><td>$prod[pass]</td><td>$prod[img]</td>";
+
+
+						echo "<td>";
+						if($prod['rol']==1){
+							echo "Administrador";
+						} else {
+							echo "Usuario";
+						}
+
+
+						echo "</td><td>";
+
+						if($prod['Activo']==1){
+							echo "Activado";
+						} else {
+							echo "Desactivado";
+						}
+
+						echo "</td></tr>";
+
+
+					}
+
+					?>
 
 				</table>
 
-				<?php
+					<?php
 			} else {
 				echo "Producto con id=$_REQUEST[id] no encontrado!";
 			}
 			//cerramos la conexión con la base de datos
-					mysqli_close($con);
-				?>
-			<br/><br/>
+			mysqli_close($con);
+		?>
+		<br/><br/>
 		<a href="AdministrarUser.php">Volver</a>
 	</body>
 </html>

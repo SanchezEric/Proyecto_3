@@ -9,13 +9,13 @@
 			//realizamos la conexión con mysql
 			$con = mysqli_connect('localhost', 'root', '', 'club_estudio');
 
-			$sql = "INSERT INTO usuario (nom, pass, rol, img) VALUES ('$_REQUEST[nom]', '$_REQUEST[passw]', '$_REQUEST[tip]', '$_REQUEST[imag]')";
+			$sql = "INSERT INTO usuario (nom, pass, rol, Activo, img) VALUES ('$_REQUEST[nom]', '$_REQUEST[passw]', '$_REQUEST[tip]', '$_REQUEST[estad]', '$_REQUEST[imag]')";
 
 			// echo $sql;
 
 			//lanzamos la sentencia sql
 			$datos = mysqli_query($con, $sql);
-			header("location: index.php")
+			header("location: AdministrarUser.php")
 			
 		?>
 	</body>

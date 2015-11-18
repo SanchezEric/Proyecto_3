@@ -28,9 +28,33 @@
 				<input type="text" name="passw" size="20" maxlength="25" value="<?php echo $prod['pass']; ?>"><br/>
 				
 				Rol:<br/>
-				<input type="text" name="tip" size="20" maxlength="25" value="<?php echo $prod['rol']; ?>"><br/>
+
+				<?php
+				if($prod['rol']==1){
+						echo "	Es admin";
+					?>
+						<select name="estad">
+							<option value="0">Usuario</option>
+							<option value="1" selected>Administrador</option>	
+						</select>
+					<?php
+					} else {
+						echo "Es user";
+					?>
+						<select name="tip">
+							<option value="0" selected>Usuario</option>
+							<option value="1">Administrador</option>	
+						</select>
+					<?php
+						}
+					?>	
+				
+				
+
+
+
 				<br/>
-				Precio:<br/>
+				IMG:<br/>
 				<input type="text" name="imag" size="5" maxlength="8" value="<?php echo $prod['img']; ?>"><br/>
 				<input type="submit" value="Guardar">
 				</form>
@@ -42,6 +66,6 @@
 			mysqli_close($con);
 		?>
 		<br/><br/>
-		<a href="index.php">Volver</a>
+		<a href="AdministrarUser.php">Volver</a>
 	</body>
 </html>
