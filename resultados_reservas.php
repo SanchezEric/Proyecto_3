@@ -32,8 +32,11 @@ function mostrarReservas () {
 				echo "<b>Fecha inicio:</b> ";
 				echo utf8_encode($reserva['dateini']);
 				echo "<br/>";
-				echo "<b>Fecha fin:</b> ";
-				echo utf8_encode($reserva['datefi']);
+				echo "<b>Hora:</b> ";
+				echo utf8_encode($reserva['horareserva']);
+					echo ":00 a ";
+					echo ($reserva['horareserva']);
+					echo ":55";
 				echo "<br></div><br/>";
 				$fichero="img/$recurso[img]";
 				if(file_exists($fichero)&&(($recurso['img']) != '')){
@@ -49,7 +52,7 @@ function mostrarReservas () {
 			}
 		}
 		else{
-				$sql_default = "SELECT * FROM reserva ORDER BY id_reserva DESC";
+				$sql_default = "SELECT * FROM reserva ORDER BY dateini DESC";
 				$datos_default = mysqli_query($con, $sql_default);
 				while($reserva = mysqli_fetch_array($datos_default)){
 					$sql_recurso = "SELECT * FROM recurso, reserva WHERE $reserva[id_recurso] = recurso.id_recurso";
@@ -68,8 +71,11 @@ function mostrarReservas () {
 					echo "<b>Fecha inicio:</b> ";
 					echo utf8_encode($reserva['dateini']);
 					echo "<br/>";
-					echo "<b>Fecha fin:</b> ";
-					echo utf8_encode($reserva['datefi']);
+					echo "<b>Hora:</b> ";
+					echo utf8_encode($reserva['horareserva']);
+					echo ":00 a ";
+					echo ($reserva['horareserva']);
+					echo ":55";
 					echo "<br></div><br/>";
 					$fichero="img/$recurso[img]";
 					if(file_exists($fichero)&&(($recurso['img']) != '')){

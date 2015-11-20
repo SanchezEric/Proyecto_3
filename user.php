@@ -23,10 +23,10 @@
 								<form action="user.php" method="GET">
 									<div class="checkbox">
 										<label class="checkbox-inline">
-											<input id="checkbox" type="checkbox" name="estado_recurso[]" value="0">Disponible
+											<input id="checkbox" type="checkbox" name="estado_recurso[]" value="0" checked>Disponible
 										</label>
 										<label class="checkbox-inline">
-											<input id="checkbox" type="checkbox" name="estado_recurso[]" value="1">Ocupado
+											<input id="checkbox" type="checkbox" name="estado_recurso[]" value="1" checked>Ocupado
 										</label>
 										<select class="btn btn-default pull-right" id="categoria" name="categoria">
 											<option value="">Seleccionar categoría</option>

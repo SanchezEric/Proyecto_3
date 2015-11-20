@@ -31,6 +31,7 @@
       <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" type="text/css" href="css/global.css">
       <link rel="icon" type="image/png" href="img/favicon.png" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   </head>
   <body>
     <header>
@@ -38,6 +39,8 @@
           <ul>
             <li><a href="admin.php"><img src ='img/logo.png'width='250' heigth='250'/></a></li>
             <li><a href="busqueda_reservas_admin.php" class="navList">Reservas</a></li>
+            <li><a href="contBBDD.php" class="navList">Cont. BBDD</a></li>
+            <
             <li><a href="historial_incidencias_admin.php" class="navList">SAT</a></li>
             <li><a href="logout.php" class="navLogout">Salir</a></li>
             <li>

@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8"/>
-		<title>Ejemplo de formularios con datos en BD</title>
-	</head>
-	<body>
 		<?php
+			include_once 'header_admin.php';
 			//realizamos la conexión con mysql
 			$con = mysqli_connect('localhost', 'root', '', 'club_estudio');
 
@@ -19,13 +13,13 @@
 			$datos = mysqli_query($con, $sql);
 			if(mysqli_num_rows($datos)>0){
 				?>
-				<table border>
-					<tr>
-						<th>Nombre</th>
-						<th>Password</th>
-						<th>IMG</th>
-						<th>Rol</th>
-						<th>Estado</th>
+				<table border style= "background-color:lightgrey; margin-left: 10%; margin-top: 5%">
+					<tr style= "background-color:#c1bbbb">
+						<th>&nbsp Nombre &nbsp </th>
+						<th>&nbsp Password &nbsp </th>
+						<th>&nbsp IMG &nbsp </th>
+						<th>&nbsp Rol &nbsp </th>
+						<th>&nbsp Estado &nbsp </th>
 					</tr>
 
 					<?php
@@ -33,23 +27,23 @@
 					//recorremos los resultados y los mostramos por pantalla
 					//la función substr devuelve parte de una cadena. A partir del segundo parámetro (aquí 0) devuelve tantos carácteres como el tercer parámetro (aquí 25)
 					while ($prod = mysqli_fetch_array($datos)){
-						echo "<tr><td>$prod[nom]</td><td>$prod[pass]</td><td>$prod[img]</td>";
+						echo "<tr><td>&nbsp $prod[nom] &nbsp</td><td>&nbsp $prod[pass] &nbsp</td><td>&nbsp $prod[img] &nbsp</td>";
 
 
 						echo "<td>";
 						if($prod['rol']==1){
-							echo "Administrador";
+							echo " &nbsp Administrador &nbsp ";
 						} else {
-							echo "Usuario";
+							echo " &nbsp Usuario &nbsp ";
 						}
 
 
 						echo "</td><td>";
 
 						if($prod['Activo']==1){
-							echo "Activado";
+							echo "&nbsp Activado &nbsp";
 						} else {
-							echo "Desactivado";
+							echo "&nbsp Desactivado &nbsp";
 						}
 
 						echo "</td></tr>";
@@ -69,6 +63,9 @@
 			mysqli_close($con);
 		?>
 		<br/><br/>
-		<a href="AdministrarUser.php">Volver</a>
-	</body>
-</html>
+		<div class="btn btn-danger" style = "margin-left: 10%">
+						<a href="AdministrarUser.php">Volver</a>
+				</div>
+		<?php
+		include_once 'footer.php';
+		?>

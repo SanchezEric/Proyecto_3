@@ -33,7 +33,10 @@ function mostrarReservasAdmin(){
 				echo utf8_encode($reserva['dateini']);
 				echo "<br/>";
 				echo "<b>Fecha fin:</b> ";
-				echo utf8_encode($reserva['datefi']);
+				echo utf8_encode($reserva['horareserva']);
+					echo ":00 a ";
+					echo ($reserva['horareserva']);
+					echo ":55";
 				echo "<br></div><br/>";
 
 				$fichero="img/$recurso[img]";
@@ -71,7 +74,10 @@ function mostrarReservasAdmin(){
 					echo utf8_encode($reserva['dateini']);
 					echo "<br/>";
 					echo "<b>Fecha fin:</b> ";
-					echo utf8_encode($reserva['datefi']);
+					echo utf8_encode($reserva['horareserva']);
+					echo ":00 a ";
+					echo ($reserva['horareserva']);
+					echo ":55";
 					echo "<br></div><br/>";
 					$fichero="img/$recurso[img]";
 				if(file_exists($fichero)&&(($recurso['img']) != '')){

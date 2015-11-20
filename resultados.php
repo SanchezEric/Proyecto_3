@@ -43,14 +43,13 @@ function mostrarConsulta (){
 			echo "</div><br/>";
 			echo "<div class='botonera'>";
  			
- 			echo ' <div class="btn btn-primary" id="btnLiberar'.$recurso['id_recurso'].'" name="btnLiberar">';
+ 			
 ?>
-				<a href="liberar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
-            </div> 
+				
 <?php                
 				echo '<div class="btn btn-success" id="btnReservar'.$recurso['id_recurso'].'" name="btnReservar">';
 ?>      	
-    				<a href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
+    				<a href="ReservaporHora.pre.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
 				</div>
 <?php                 
             echo"  </div>";
@@ -67,28 +66,35 @@ function mostrarConsulta (){
 			echo"</div>";
 			echo "<br/><br>";
 
-			if ($recurso["estado"] == "0"){
-				echo 	"<script>
+			echo 	"<script>
 					        $(document).ready(function() {
-								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);				
+								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);				
 								$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', false);
 							});
 					    </script>";
-			}else if ($recurso["estado"] == "1"){
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);
-								$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', true);
-							});
-					    </script>";
-			} else {
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);
-								$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', true);
-							});
-					    </script>";
-			}
+
+			// if ($recurso["estado"] == "0"){
+				// echo 	"<script>
+				// 	        $(document).ready(function() {
+				// 				$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);				
+				// 				$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', false);
+				// 			});
+				// 	    </script>";
+			// }else if ($recurso["estado"] == "1"){
+			// 	echo 	"<script>
+			// 		        $(document).ready(function() {
+			// 					$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);
+			// 					$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', true);
+			// 				});
+			// 		    </script>";
+			// } else {
+			// 	echo 	"<script>
+			// 		        $(document).ready(function() {
+			// 					$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);
+			// 					$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', true);
+			// 				});
+			// 		    </script>";
+			// }
 		}
 	} else {
 		$count = 0;
@@ -129,14 +135,13 @@ function mostrarConsulta (){
 			echo "</div><br/>";
 			echo "<div class='botonera'>";
 			
-			echo ' <div class="btn btn-primary" id="btnLiberar'.$recurso['id_recurso'].'" name="btnLiberar">';
+			
 ?>             
-				<a href="liberar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
-            </div> 
+			 
 <?php                
 				echo '<div class="btn btn-success" id="btnReservar'.$recurso['id_recurso'].'" name="btnReservar">';
 ?>      	
-    				<a href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
+    				<a href="ReservaporHora.pre.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
 				</div>
 <?php   
 	        echo"</div>";
@@ -154,30 +159,35 @@ function mostrarConsulta (){
 			
 			echo "<br/><br>";
 
-			if ($recurso["estado"] == "0"){
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);				
-								$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', false);
-							});
+			echo 	"<script>
+				$(document).ready(function() {
+					$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);				
+					$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', false);
+				});
 					    </script>";
-			}else if ($recurso["estado"] == "1"){
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);
-								$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', true);
-							});
-					    </script>";
-			} else {
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);
-								$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', true);
-							});
-					    </script>";
-			}
+			// 	echo 	"<script>
+			// 		        $(document).ready(function() {
+			// 					$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);				
+			// 					$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', false);
+			// 				});
+			// 		    </script>";
+			// }else if ($recurso["estado"] == "1"){
+			// 	echo 	"<script>
+			// 		        $(document).ready(function() {
+			// 					$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);
+			// 					$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', true);
+			// 				});
+			// 		    </script>";
+			// } else {
+			// 	echo 	"<script>
+			// 		        $(document).ready(function() {
+			// 					$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);
+			// 					$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', true);
+			// 				});
+			// 		    </script>";
+			
 
-		}
+		 }
 	}
 
 	//cerramos la conexión con la base de datos

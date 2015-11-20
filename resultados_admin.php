@@ -24,12 +24,12 @@ function mostrarConsultaAdmin (){
 
 			echo ' <div class="btn btn-primary" id="btnLiberar'.$recurso['id_recurso'].'" name="btnLiberar">';
 ?>
-				<a href="liberar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
+				<!-- <a href="liberar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a> -->
             </div> 
 <?php                
 				echo '<div class="btn btn-success" id="btnReparar'.$recurso['id_recurso'].'" name="btnReparar">';
 ?>      	
-    				<a href="reparar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reparar</a>
+    				<!-- <a href="ReservaporHora.pre.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a> -->
 				</div>
 <?php                 
 	            echo"  </div>";
@@ -46,28 +46,35 @@ function mostrarConsultaAdmin (){
 			echo"</div>";
 			echo "<br/><br>";
 
-			if ($recurso["estado"] == "0"){
-				echo 	"<script>
+			echo 	"<script>
 					        $(document).ready(function() {
-								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);				
-								$(document.getElementById('btnReparar".$recurso['id_recurso']."')).attr('disabled', false);
+								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);				
+								$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', false);
 							});
 					    </script>";
-			}else if ($recurso["estado"] == "1"){
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);
-								$(document.getElementById('btnReparar".$recurso['id_recurso']."')).attr('disabled', false);
-							});
-					    </script>";
-			} else {
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);
-								$(document.getElementById('btnReparar".$recurso['id_recurso']."')).attr('disabled', true);
-							});
-					    </script>";
-			}
+
+			// if ($recurso["estado"] == "0"){
+			// 	echo 	"<script>
+			// 		        $(document).ready(function() {
+			// 					$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);				
+			// 					$(document.getElementById('btnReparar".$recurso['id_recurso']."')).attr('disabled', false);
+			// 				});
+			// 		    </script>";
+			// }else if ($recurso["estado"] == "1"){
+			// 	echo 	"<script>
+			// 		        $(document).ready(function() {
+			// 					$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);
+			// 					$(document.getElementById('btnReparar".$recurso['id_recurso']."')).attr('disabled', false);
+			// 				});
+			// 		    </script>";
+			// } else {
+			// 	echo 	"<script>
+			// 		        $(document).ready(function() {
+			// 					$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);
+			// 					$(document.getElementById('btnReparar".$recurso['id_recurso']."')).attr('disabled', true);
+			// 				});
+			// 		    </script>";
+			// }
 			
 		}
 	} else {
@@ -111,12 +118,12 @@ function mostrarConsultaAdmin (){
 			
 			echo ' <div class="btn btn-primary" id="btnLiberar'.$recurso['id_recurso'].'" name="btnLiberar">';
 ?>
-				<a href="liberar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
+				<!-- <a href="liberar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a> -->
             </div> 
 <?php                
 				echo '<div class="btn btn-success" id="btnReparar'.$recurso['id_recurso'].'" name="btnReparar">';
 ?>      	
-    				<a href="reparar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reparar</a>
+    				<!-- <a href="ReservaporHora.pre.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a> -->
 				</div>
 <?php   
             echo"</div>";
@@ -134,28 +141,35 @@ function mostrarConsultaAdmin (){
 			
 			echo "<br/><br>";
 			
-			if ($recurso["estado"] == "0"){
-				echo 	"<script>
+			echo 	"<script>
 					        $(document).ready(function() {
-								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);				
-								$(document.getElementById('btnReparar".$recurso['id_recurso']."')).attr('disabled', false);
+								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);				
+								$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', false);
 							});
 					    </script>";
-			}else if ($recurso["estado"] == "1"){
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);
-								$(document.getElementById('btnReparar".$recurso['id_recurso']."')).attr('disabled', false);
-							});
-					    </script>";
-			} else {
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);
-								$(document.getElementById('btnReparar".$recurso['id_recurso']."')).attr('disabled', true);
-							});
-					    </script>";
-			}
+			
+			// if ($recurso["estado"] == "0"){
+			// 	echo 	"<script>
+			// 		        $(document).ready(function() {
+			// 					$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);				
+			// 					$(document.getElementById('btnReparar".$recurso['id_recurso']."')).attr('disabled', false);
+			// 				});
+			// 		    </script>";
+			// }else if ($recurso["estado"] == "1"){
+			// 	echo 	"<script>
+			// 		        $(document).ready(function() {
+			// 					$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);
+			// 					$(document.getElementById('btnReparar".$recurso['id_recurso']."')).attr('disabled', false);
+			// 				});
+			// 		    </script>";
+			// } else {
+			// 	echo 	"<script>
+			// 		        $(document).ready(function() {
+			// 					$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);
+			// 					$(document.getElementById('btnReparar".$recurso['id_recurso']."')).attr('disabled', true);
+			// 				});
+			// 		    </script>";
+			// }
 		}
 	}
 
